@@ -15,14 +15,18 @@ export default function Container() {
     <StyledContainer>
       <Spinner>
         <BrowserRouter>
-          {/* <>
-            <Quotes />
-            <QuoteForm />
-          </> */}
-
           <Route exact path='/' render={pr => {
             // if local storage legit, return the jsx we commened out above
             // otherwise REDIRECT!!!
+            if (localStorage.getItem('token')) {
+              return (
+                <>
+                  <Quotes />
+                  <QuoteForm />
+                </>
+              );
+            }
+            return <Redirect to='login' />;
           }} />
 
 
