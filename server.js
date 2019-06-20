@@ -28,6 +28,9 @@ let quotes = [
 ];
 
 function getAllQuotes(req, res) {
+  // we would check the token inside the Authorization header
+  // determine if it's valid and if so
+  // return the stuff
   res.json(quotes);
 }
 
