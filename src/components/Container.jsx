@@ -14,12 +14,14 @@ export default function Container() {
   return (
     <StyledContainer>
       <Spinner>
-        <>
-          <Quotes />
-          <QuoteForm />
-        </>
+        <BrowserRouter>
+          <>
+            <Quotes />
+            <QuoteForm />
+          </>
 
-        <Login />
+          <Route path='/login' comoponent={Login} />
+        </BrowserRouter>
       </Spinner>
     </StyledContainer>
   );
