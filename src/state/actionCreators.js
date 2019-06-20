@@ -1,5 +1,6 @@
 import uuid from 'uuid';
 import axios from 'axios';
+import axiosImproved from '../../axios';
 import * as types from './actionTypes';
 
 // STEP 7: CREATE ACTION CREATOR FUNCTIONS
@@ -49,7 +50,7 @@ export function addQuotes(quotes) {
 // without thunk... it won't work
 export const fetchQuotes = () => dispatch => {
   // we code
-  axios.get('http://localhost:3000/api/quotes')
+  axiosImproved().get('http://localhost:3000/api/quotes')
     .then(res => {
       // what do you suggest?
       // dispatch({ type: types.ADD_QUOTES, payload: res.data }); // option 1
