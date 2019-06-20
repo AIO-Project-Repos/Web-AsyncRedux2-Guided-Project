@@ -81,3 +81,11 @@ export const postNewQuote = (quote) => dispatch => {
       console.log(error.message);
     });
 };
+
+export const login = (username, password) => dispatch => {
+  // all about getting a token in exchange for valid credentials
+  // I don't need the improved axios
+  // make the right payload for the login enpoint
+
+  // if successful, we will get a response which will be an object containing a token. We should set it into local storage at this point and call it a day
+};
