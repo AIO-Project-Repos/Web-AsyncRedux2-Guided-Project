@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Link, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 import Quotes from './Quotes';
 import QuoteForm from './QuoteForm';
@@ -14,9 +14,20 @@ export default function Container() {
   return (
     <StyledContainer>
       <Spinner>
-        <Quotes />
-        <QuoteForm />
-        <Login />
+        <BrowserRouter>
+          <Route exact path='/' render={() => {
+            if (localStorage.getItem('token')) {
+              return (
+                <>
+                  <Quotes />
+                  <QuoteForm />
+                </>
+              );
+            }
+            return <Redirect to='/login' />;
+          }} />
+          <Route path='/login' component={Login} />
+        </BrowserRouter>
       </Spinner>
     </StyledContainer>
   );
