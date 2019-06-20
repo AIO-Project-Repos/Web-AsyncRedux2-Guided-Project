@@ -14,20 +14,12 @@ export default function Container() {
   return (
     <StyledContainer>
       <Spinner>
-        <BrowserRouter>
-          <Route exact path='/' render={() => {
-            if (localStorage.getItem('token')) {
-              return (
-                <>
-                  <Quotes />
-                  <QuoteForm />
-                </>
-              );
-            }
-            return <Redirect to='/login' />;
-          }} />
-          <Route path='/login' component={Login} />
-        </BrowserRouter>
+        <>
+          <Quotes />
+          <QuoteForm />
+        </>
+
+        <Login />
       </Spinner>
     </StyledContainer>
   );
