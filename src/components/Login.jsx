@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { login } from '../state/actionCreators';
 
-export default class Login extends React.Component {
+export class Login extends React.Component {
   userRef = React.createRef()
 
   passRef = React.createRef()
@@ -24,3 +26,8 @@ export default class Login extends React.Component {
     );
   }
 }
+
+export default connect(
+  state => state,
+  { login },
+)(Login);

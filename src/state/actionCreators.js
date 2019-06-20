@@ -83,9 +83,16 @@ export const postNewQuote = (quote) => dispatch => {
 };
 
 export const login = (username, password) => dispatch => {
-  // all about getting a token in exchange for valid credentials
-  // I don't need the improved axios
-  // make the right payload for the login enpoint
+  const credentials = { username, password };
 
-  // if successful, we will get a response which will be an object containing a token. We should set it into local storage at this point and call it a day
+  axios.post('http://localhost:3000/api/login', credentials)
+    .then(res => {
+      localStorage.setItem('token', res.data.token);
+    })
+    .catch(res => {
+      console.log('AUTH FAILED!!!');
+      // turn off spinners
+      // set some error on the jsx
+      // so user can tell something went wrong
+    });
 };
