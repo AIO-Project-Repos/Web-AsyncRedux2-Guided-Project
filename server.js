@@ -62,7 +62,7 @@ function login(req, res) {
   }
 }
 
-app.get('/api/login', login);
+app.post('/api/login', login);
 app.get('/api/quotes', getAllQuotes);
 app.get('/api/quotes/:id', getQuoteById);
 app.post('/api/quotes', postNewQuote);
