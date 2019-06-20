@@ -94,5 +94,7 @@ export const login = (username, password) => dispatch => {
       // turn off spinners
       // set some error on the jsx
       // so user can tell something went wrong
-    });
+    })
+    .finally(() => {
+    })
 };

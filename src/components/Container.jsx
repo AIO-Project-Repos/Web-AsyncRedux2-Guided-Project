@@ -28,9 +28,8 @@ export default function Container() {
             }
             return <Redirect to='login' />;
           }} />
-
-
           <Route path='/login' component={Login} />
+
         </BrowserRouter>
       </Spinner>
     </StyledContainer>
