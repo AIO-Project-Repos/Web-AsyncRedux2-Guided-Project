@@ -20,6 +20,11 @@ export default function Container() {
             <QuoteForm />
           </> */}
 
+          <Route exact path='/' render={pr => {
+            // if local storage legit, return the jsx we commened out above
+            // otherwise REDIRECT!!!
+          }} />
+
 
           <Route path='/login' component={Login} />
         </BrowserRouter>
