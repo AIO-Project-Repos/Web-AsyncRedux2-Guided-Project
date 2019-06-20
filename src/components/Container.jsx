@@ -15,12 +15,13 @@ export default function Container() {
     <StyledContainer>
       <Spinner>
         <BrowserRouter>
-          <>
+          {/* <>
             <Quotes />
             <QuoteForm />
-          </>
+          </> */}
 
-          <Route path='/login' comoponent={Login} />
+
+          <Route path='/login' component={Login} />
         </BrowserRouter>
       </Spinner>
     </StyledContainer>
