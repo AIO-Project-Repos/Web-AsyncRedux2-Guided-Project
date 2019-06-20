@@ -3,7 +3,6 @@ import { bool } from 'prop-types';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-
 const StyledSpinner = styled.div`
   .spinner {
     display: ${props => (props.spinnerOn ? "block" : "none")};
