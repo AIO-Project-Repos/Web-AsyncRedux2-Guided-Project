@@ -52,7 +52,7 @@ Quotes.propTypes = {
   // functions that change state:
   makeQuoteOfTheDay: func,
   markApocryphal: func,
-  deleteQuote: func,
+  removeQuote: func,
 };
 
 function mapStateToProps(state) {
